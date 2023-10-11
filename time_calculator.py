@@ -24,7 +24,6 @@ def add_time(start, duration, day = 0):
     flag = 1
     for indeks, element in enumerate(days):
       if element.lower() == day.lower():
-          #print(f"Znaleziono '{szukany_string}' na indeksie {indeks}")
           break
     day = indeks
     day_name = days[day]
@@ -77,17 +76,14 @@ def add_time(start, duration, day = 0):
       day_name = " (next day)"
     else:
       day_name = " (" + str(d_count) + " days later)"
-    #print(f"{hours}:{min} {start_part} {day_name}")
     new_time = str(hours) + ":" + str(min) + " " + start_part + day_name
   if flag_nd == 1 and flag == 1: # następne dni z nazwą dnia tygodnia
     if d_count == 1:
       day_name = ", " + days[day_i] + " (next day)"
     else:
       day_name = ", " + days[day_i] + " (" + str(d_count) + " days later)"
-    #print(f"{hours}:{min} {start_part} {day_name}")
     new_time = str(hours) + ":" + str(min) + " " + start_part + day_name
   if flag_nd == 0 and flag == 0: # ten sam dzień bez nazwy dnia tygodnia
-    #print(f"{hours}:{min} {start_part}")
     new_time = str(hours) + ":" + str(min) + " " + start_part
   if flag_nd == 0 and flag == 1: # ten sam dzień z nazwą dnia tygodnia
     day_name = ", " + days[day_i]
